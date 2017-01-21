@@ -31,7 +31,9 @@ public class Auto extends Command {
 	public int jobThreeL;
 	public int jobThreeM;
 	public int jobThreeN;
-	public String type = "DoNothing";
+	public String type;
+	public String alliance;
+	public int startingPosition;
 
 	public static void main(String[] arguments) {
 		Scanner position = new Scanner(System.in);
@@ -47,8 +49,6 @@ public class Auto extends Command {
 
 	}
 
-	public int startingPosition;
-
 	public Auto() {
 		requires(Robot.exampleSubsystem);
 		// startingPosition = blah;
@@ -60,52 +60,644 @@ public class Auto extends Command {
 
 	@Override
 	protected void execute() {
-		switch (startingPosition) {
-		case 1: // Starting position 1
-			switch (type) { //only go to peg W or S
-			case "DoNothing":
+		switch (alliance.toLowerCase()) {
+		case "blue":
+			switch (startingPosition) {
+			case 1: // Starting position 1
+				switch (type) { // only go to peg W or S
+				case "ShootWPeg": // Shoot, then go to West Peg
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with west peg, stop
+					//rotate east
+					//drive to west peg
+					//stop
+					//rotate and line up with west peg
+					//place gear on west peg
+					//back up
+					//stop
+					break;
+				case "ShootSPeg": // Shoot, then go to South Peg
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with south peg, stop
+					//rotate east
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					break;
+				case "SPegShoot": // Go to South Peg, then Shoot
+					//start facing south peg
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					//rotate west
+					//drive west
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "WPegShoot": // Go to West Peg, then Shoot
+					//start facing north
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive north
+					//when lined up with west peg, stop
+					//rotate east
+					//drive to west peg
+					//stop
+					//rotate and line up with west peg
+					//place gear on west peg
+					//back up
+					//stop
+					//rotate south
+					//drive south
+					//when lined up with boiler, stop
+					//rotate west
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "DoNothing": // No auto programmed, or choosing not to use
+				default:		  // other options
+					break;
+				}
 				break;
-			case "ShootWPeg":
+			case 2: // Starting position 2
+				switch (type) {
+				case "ShootNPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with north peg, stop
+					//rotate east
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					break;
+				case "ShootSPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with south peg, stop
+					//rotate east
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					break;
+				case "ShootWPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with west peg, stop
+					//rotate east
+					//drive to west peg
+					//stop
+					//rotate and line up with west peg
+					//place gear on west peg
+					//back up
+					//stop
+					break;
+				case "NPegShoot":
+					//start facing north
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive north
+					//when lined up with north peg, stop
+					//rotate east
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					//rotate west
+					//drive west
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "WPegShoot":
+					//start facing west peg
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to west peg
+					//stop
+					//rotate and line up with west peg
+					//place gear on west peg
+					//back up
+					//stop
+					//rotate west
+					//drive west
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "SPegShoot":
+					//start facing south
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive south
+					//when lined up with south peg, stop
+					//rotate east
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					//rotate west
+					//drive west
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "DoNothing":
+				default:
+					break;
+				}
 				break;
-			case "ShootSPeg":
+			case 3: // Starting position 3
+				switch (type) {
+				case "ShootNPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with north peg, stop
+					//rotate east
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					break;
+				case "ShootWPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with west peg, stop
+					//rotate east
+					//drive to west peg
+					//stop
+					//rotate and line up with west peg
+					//place gear on west peg
+					//back up
+					//stop
+					break;
+				case "NPegShoot":
+					//start facing north peg
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					//rotate west
+					//drive west
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "WPegShoot":
+					//start facing south
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive south
+					//when lined up with west peg, stop
+					//rotate east
+					//drive to west peg
+					//stop
+					//rotate and line up with west peg
+					//place gear on west peg
+					//back up
+					//stop
+					//rotate west
+					//drive west
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "DoNothing":
+				default:
+					break;
+				}
 				break;
-			case "SPegShoot":
-				break;
-			case "WPegShoot":
+			default:
 				break;
 			}
-			break;
-		case 2: // Starting position 2
-			switch (type) {
-			case "DoNothing":
+		case "red":
+			switch (startingPosition) {
+			case 1: // Starting position 1
+				switch (type) { // only go to peg E or S
+				case "ShootEPeg": // Shoot, then go to East Peg
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with east peg, stop
+					//rotate west
+					//drive to east peg
+					//stop
+					//rotate and line up with east peg
+					//place gear on east peg
+					//back up
+					//stop
+					break;
+				case "ShootSPeg": // Shoot, then go to South Peg
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with south peg, stop
+					//rotate west
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					break;
+				case "SPegShoot": // Go to South Peg, then Shoot
+					//start facing south peg
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					//rotate east
+					//drive east
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "EPegShoot": // Go to East Peg, then Shoot
+					//start facing north
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive north
+					//when lined up with east peg, stop
+					//rotate to east peg
+					//drive to east peg
+					//stop
+					//rotate and line up with east peg
+					//place gear on east peg
+					//back up
+					//stop
+					//rotate east
+					//drive east
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "DoNothing":
+				default:
+					break;
+				}
 				break;
-			case "ShootNPeg":
+			case 2: // Starting position 2
+				switch (type) {
+				case "ShootNPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with north peg, stop
+					//turn west
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					break;
+				case "ShootSPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with south peg, stop
+					//turn west
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					break;
+				case "ShootEPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with east peg, stop
+					//turn west
+					//drive to east peg
+					//stop
+					//rotate and line up with east peg
+					//place gear on east peg
+					//back up
+					//stop
+					break;
+				case "NPegShoot":
+					//start facing north
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive north
+					//when lined up with north peg, stop
+					//rotate west
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					//rotate east
+					//drive east
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "EPegShoot":
+					//start facing east peg
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to east peg
+					//stop
+					//rotate and line up with east peg
+					//place gear on east peg
+					//back up
+					//stop
+					//rotate east
+					//drive east
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "SPegShoot":
+					//start facing south
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive south
+					//when lined up with south peg, stop
+					//rotate west
+					//drive to south peg
+					//stop
+					//rotate and line up with south peg
+					//place gear on south peg
+					//back up
+					//stop
+					//rotate east
+					//drive east
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "DoNothing":
+				default:
+					break;
+				}
 				break;
-			case "ShootSPeg":
-				break;
-			case "ShootWPeg":
-				break;
-			case "NPegShoot":
-				break;
-			case "WPegShoot":
-				break;
-			case "SPegShoot":
+			case 3: // Starting position 3
+				switch (type) {
+				case "ShootNPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with north peg, stop
+					//turn west
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					break;
+				case "ShootEPeg":
+					//start facing boiler
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//rotate north
+					//drive north
+					//when lined up with east peg, stop
+					//turn west
+					//drive to east peg
+					//stop
+					//rotate and line up with east peg
+					//place gear on east peg
+					//back up
+					//stop
+					break;
+				case "NPegShoot":
+					//start facing north peg
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive to north peg
+					//stop
+					//rotate and line up with north peg
+					//place gear on north peg
+					//back up
+					//stop
+					//rotate east
+					//drive east
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "EPegShoot":
+					//start facing south
+					//if behind another robot at any point in time,
+						//wait for the other robot to move OR go around them
+					//drive south
+					//when lined up with east peg, stop
+					//rotate west
+					//drive to east peg
+					//stop
+					//rotate and line up with east peg
+					//place gear on east peg
+					//back up
+					//stop
+					//rotate east
+					//drive east
+					//when lined up with boiler, stop
+					//rotate south
+					//drive to boiler
+					//stop
+					//rotate to face the inside of the boiler, if necessary
+					//shoot
+					//back up
+					//stop
+					break;
+				case "DoNothing":
+				default:
+					break;
+				}
+			default:
 				break;
 			}
-			break;
-		case 3: // Starting position 3
-			switch (type) {
-			case "DoNothing":
 				break;
-			case "ShootNPeg":
-				break;
-			case "ShootWPeg":
-				break;
-			case "NPegShoot":
-				break;
-			case "WPegShoot":
-				break;
-			}
+		default:
 			break;
 		}
 	}
